@@ -1,0 +1,20 @@
+package com.codecool;
+
+import java.util.function.Supplier;
+
+public class Fibonacci implements Supplier<Integer> {
+
+    private int previous = 0;
+    private int current = 1;
+
+
+    @Override
+    public Integer get() {
+        int result = current;
+
+        current = previous + current;
+        previous = result;
+
+        return result;
+    }
+}
